@@ -77,7 +77,7 @@ def create_mimic_dict(filename):
             for i, word in enumerate(text):
                 if unique_word == word and i+1 < len(text):
                     d[unique_word] += [text[i+1]]
-            print(unique_word, d.get(unique_word))
+        print(d)
 
 
 def print_mimic(mimic_dict, start_word):
