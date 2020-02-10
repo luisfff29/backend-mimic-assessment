@@ -70,6 +70,7 @@ def create_mimic_dict(filename):
     """
     with open(filename, "r") as rf:
         text = rf.read().split()
+        text.insert(0, "")
         print(text)
 
 
