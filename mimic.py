@@ -62,7 +62,7 @@ def create_mimic_dict(filename):
                 "software" : ["developer,"],
                 "developer," : ["and"],
                 "and" : ["I"],
-                "I" : ["don't"],
+                "I" : ["don't"], <==== this output should be >>'knows"': [],<<
                 "don't" : ["care"],
                 "care" : ["who"],
                 "who" : ["knows"]
@@ -74,10 +74,10 @@ def create_mimic_dict(filename):
         d = {}
         for unique_word in sorted(set(text)):
             d[unique_word] = []
-            for word in text:
-                if unique_word == word:
-                    d[unique_word] += [word]
-        print(d)
+            for i, word in enumerate(text):
+                if unique_word == word and i+1 < len(text):
+                    d[unique_word] += [text[i+1]]
+            print(unique_word, d.get(unique_word))
 
 
 def print_mimic(mimic_dict, start_word):
@@ -88,7 +88,6 @@ def print_mimic(mimic_dict, start_word):
         - Repeat this process 200 times
     """
     # +++your code here+++
-    print(mimic_dict)
 
 
 # Provided main(), calls mimic_dict() and mimic()
