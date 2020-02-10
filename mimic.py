@@ -89,8 +89,11 @@ def print_mimic(mimic_dict, start_word):
         - Repeat this process 200 times
     """
     list_words = []
-    nxt = random.choice(mimic_dict.get('a'))
-    print(nxt)
+    while len(list_words) < 10:
+        next_word = random.choice(mimic_dict.get(start_word))
+        list_words.append(next_word)
+        start_word = next_word
+    print(list_words)
 
 
 # Provided main(), calls mimic_dict() and mimic()
