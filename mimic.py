@@ -71,10 +71,13 @@ def create_mimic_dict(filename):
     with open(filename, "r") as rf:
         text = rf.read().split()
         text.insert(0, "")
+        d = {}
         for unique_word in sorted(set(text)):
+            d[unique_word] = []
             for word in text:
                 if unique_word == word:
-                    print(word)
+                    d[unique_word] += [word]
+        print(d)
 
 
 def print_mimic(mimic_dict, start_word):
