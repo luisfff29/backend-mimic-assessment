@@ -78,7 +78,7 @@ def create_mimic_dict(filename):
             for i, word in enumerate(text):
                 if unique_word == word and i+1 < len(text):
                     di[unique_word] += [text[i+1]]
-    print(di)
+    return di
 
 
 def print_mimic(mimic_dict, start_word):
@@ -88,7 +88,8 @@ def print_mimic(mimic_dict, start_word):
         - Randomly select a new word from the next-list
         - Repeat this process 200 times
     """
-    # +++your code here+++
+    list_words = []
+    print(list_words)
 
 
 # Provided main(), calls mimic_dict() and mimic()
