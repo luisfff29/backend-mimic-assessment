@@ -69,7 +69,8 @@ def create_mimic_dict(filename):
             }
     """
     with open(filename, "r") as rf:
-        print(rf.read())
+        text = rf.read().split()
+        print(text)
 
 
 def print_mimic(mimic_dict, start_word):
