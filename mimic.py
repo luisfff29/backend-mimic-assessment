@@ -62,7 +62,7 @@ def create_mimic_dict(filename):
                 "software" : ["developer,"],
                 "developer," : ["and"],
                 "and" : ["I"],
-                "I" : ["don't"], <==== this output should be >>'knows"': [],<<
+                "I" : ["don't"], <==== this output should be >>'knows"': [""],<<
                 "don't" : ["care"],
                 "care" : ["who"],
                 "who" : ["knows"]
@@ -71,6 +71,7 @@ def create_mimic_dict(filename):
     with open(filename, "r") as rf:
         text = rf.read().split()
         text.insert(0, "")
+        text.append("")
         di = {}
         for unique_word in sorted(set(text)):
             di[unique_word] = []
