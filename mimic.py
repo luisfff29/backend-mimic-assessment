@@ -68,7 +68,8 @@ def create_mimic_dict(filename):
                 "who" : ["knows"]
             }
     """
-    # +++your code here+++
+    with open(filename, "r") as rf:
+        print(rf.read())
 
 
 def print_mimic(mimic_dict, start_word):
@@ -79,7 +80,7 @@ def print_mimic(mimic_dict, start_word):
         - Repeat this process 200 times
     """
     # +++your code here+++
-    pass
+    print(mimic_dict)
 
 
 # Provided main(), calls mimic_dict() and mimic()
